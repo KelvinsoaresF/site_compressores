@@ -77,7 +77,6 @@ export default function Header() {
                 Av. Geraldo Liessi, 611 2º Distrito Industrial - Birigui/SP
             </div>
 
-
         </>
 
     );
