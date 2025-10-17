@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 
 export default function Header() {
@@ -8,25 +9,35 @@ export default function Header() {
 
     return (
         <>
-            <header className="bg-blue-800 text-white">
+            <header className="fixed top-0 left-0 w-full bg-blue-800 text-white z-50 shadow-md">
                 <div className="flex justify-between items-center h-[100px] px-6">
+
                     {/* Logo */}
                     <div className="flex items-center space-x-2">
-                        <Image
-                            src="/img/logo.png"
-                            width={200}
-                            height={200}
-                            alt="Logo"
-                            className="rounded"
-                        />
+                        <Link href={'/'}>
+                            <Image
+                                src="/img/logo.png"
+                                width={200}
+                                height={200}
+                                alt="Logo"
+                                className="rounded"
+                            />
+                        </Link>
                     </div>
 
                     {/* Desktop Menu */}
                     <nav className="hidden md:flex space-x-6">
-                        <a href="#home" className="hover:text-blue-300">Início</a>
-                        <a href="#produtos" className="hover:text-blue-300">Produtos</a>
-                        <a href="#sobre" className="hover:text-blue-300">Sobre</a>
-                        <a href="#contato" className="hover:text-blue-300">Contato</a>
+                        <Link href="/">
+                            <p className="hover:text-blue-300">Início</p>
+                        </Link>
+
+                        <Link href="/sobre">
+                            <p className="hover:text-blue-300">Sobre nós</p>
+                        </Link>
+
+                        <Link href="/contato">
+                            <p className="hover:text-blue-300">Contato</p>
+                        </Link>
                     </nav>
 
                     {/* Mobile menu toggle */}
@@ -64,18 +75,31 @@ export default function Header() {
                 {isMobileMenuOpen && (
                     <nav className="md:hidden px-6 pb-4 w-[60px]">
                         <ul className="flex flex-col space-y-2">
-                            <li><a href="#home" className="block py-2 hover:text-blue-300">Início</a></li>
-                            <li><a href="#produtos" className="block py-2 hover:text-blue-300">Produtos</a></li>
-                            <li><a href="#sobre" className="block py-2 hover:text-blue-300">Sobre</a></li>
-                            <li><a href="#contato" className="block py-2 hover:text-blue-300">Contato</a></li>
+
+                            <Link href={'/'}>
+                                <li><p className="block py-2 hover:text-blue-300">Início</p></li>
+
+                            </Link>
+
+                            <Link href={'/sobre'}>
+                                <li><p className="block py-2 hover:text-blue-300">Sobre nós</p></li>
+
+                            </Link>
+
+                            <Link href={'/contato'}>
+                                <li><p className="block py-2 hover:text-blue-300">Contato</p></li>
+                            </Link>
+
                         </ul>
                     </nav>
                 )}
+                <div className='text-sm py-2 flex justify-center bg-black'>
+                    Av. Geraldo Liessi, 611 2º Distrito Industrial - Birigui/SP
+                </div>
+
             </header>
 
-            <div className='text-sm py-2 flex justify-center bg-blue-50/15'>
-                Av. Geraldo Liessi, 611 2º Distrito Industrial - Birigui/SP
-            </div>
+
 
         </>
 
