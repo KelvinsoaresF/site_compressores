@@ -1,8 +1,7 @@
 "use client"
 
 import Image from 'next/image'
-import Header from '@/templates/Header';
-import Footer from '@/templates/Footer';
+
 import { compressorData } from "@/data/products"
 import { useState } from 'react';
 import Link from 'next/link';
