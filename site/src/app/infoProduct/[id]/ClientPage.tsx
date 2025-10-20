@@ -4,14 +4,15 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { compressorData } from '@/data/products'
-type Props = { id: number }
+
+type Props = { id: string }
 
 export default function ClientPage({ id }: Props) {
-    const produtoId = (id)
-    const produto = compressorData.find(p => p.id === produtoId)
-    const [imagemAtiva, setImagemAtiva] = useState(produto?.images?.[0])
+  const produtoId = parseInt(id)  // Aqui você converte string → number
+  const produto = compressorData.find(p => p.id === produtoId)
+  const [imagemAtiva, setImagemAtiva] = useState(produto?.images?.[0])
 
-    if (!produto) return <p>Produto não encontrado</p>
+  if (!produto) return <p>Produto não encontrado</p>
 
     return (
         <div className="flex flex-col items-center p-4 sm:p-6 md:p-8 bg-black min-h-screen w-full">

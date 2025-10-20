@@ -1,13 +1,6 @@
 import ClientPage from "./ClientPage"
 
-interface PageProps {
-    params: {
-        id: number;
-    };
-}
-
-
-
-export default function Page({ params }: PageProps) {
-    return <ClientPage id={params.id} />
+export default function Page({ params }: { params: { id: string } }) {
+  // Apenas repassa a string
+  return <ClientPage id={params.id} />
 }
