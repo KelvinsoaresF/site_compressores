@@ -16,16 +16,29 @@ export default function Main() {
         <main className="flex flex-col mt-2 items-center space-y-10 justify-center">
             <Slider
                 images={[
-                    "/img/chicago-banner.jpg",
                     "/banners/banner1.png",
-                    "/img/caminhao.jpg",
-                    "/img/compressores.jpg",
+                    "/banners/banner2.png",
+                    "/banners/banner3.png",
+                    "/banners/banner4.png",
+                    "/banners/banner5.png",
                 ]}
             />
             <InfoBar />
-            <div className="flex flex-col md:flex-row gap-4 p-4 sm:px-10">
-                <Destaque image="/destaques/destaque-compressor.png" />
-                <Destaque image="/destaques/destaque-kit.png" />
+
+            <div className="        flex flex-col md:flex-row
+        gap-4 sm:gap-6 md:gap-8
+        p-3 sm:p-6 md:p-8
+        w-full
+        max-w-[1600px]
+        mx-auto
+        items-stretch">
+                <div className="flex-3 w-full">
+                    <Destaque image="/img/chicago-banner.jpg" />
+                </div>
+
+                <div className="flex-3 w-full">
+                    <Destaque image="/img/empresa2.jpg" />
+                </div>
             </div>
 
             <div className="flex flex-col sm:flex-row text-2xl sm:text-4xl md:text-6xl font-bold justify-center items-center gap-4 sm:gap-6 p-4">

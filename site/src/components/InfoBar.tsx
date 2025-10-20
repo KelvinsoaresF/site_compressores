@@ -13,8 +13,9 @@ export default function InfoBar() {
     }
 
     function Separator() {
-        return <p className="text-black font-extrabold">|</p>
+        return <p className="text-black font-extrabold space-x-1">|</p>
     }
+
     return (
         <div className="relative w-full overflow-hidden bg-white py-4">
             <div className="animate-marquee flex gap-10 whitespace-nowrap">
