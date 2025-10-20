@@ -2,7 +2,6 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
-import Slider from "@/components/Slider"
 import Rounded from "@/components/Rounded"
 
 export default function Sobre() {
