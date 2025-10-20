@@ -2,7 +2,7 @@ import Card from "@/components/Card"
 
 import Destaque from "@/components/Destaque"
 import InfoBar from "@/components/InfoBar"
-import Rounded from "@/components/Rounded"
+
 import Slider from "@/components/Slider"
 
 import { compressorData } from "@/data/products"

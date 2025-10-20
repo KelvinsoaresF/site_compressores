@@ -26,7 +26,7 @@ export default function Page({ params }: Params) {
                 <div className="flex flex-col md:flex-row bg-white w-full max-w-7xl gap-6 h-full rounded-md p-4 sm:p-6">
                     <div className="w-full md:w-1/2 flex flex-col items-center">
                         <Image
-                            src={imagemAtiva}
+                            src={imagemAtiva || ""}
                             alt="Produto"
                             height={400}
                             width={400}
