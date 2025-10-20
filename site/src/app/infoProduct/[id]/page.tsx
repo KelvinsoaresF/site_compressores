@@ -13,7 +13,7 @@ type Params = {
 }
 
 export default function Page({ params }: Params) {
-    const produtoId = parseInt(params.id)
+    const produtoId = parseInt(params?.id || "0")
     const produto = compressorData.find((item) => item.id === produtoId)
     const [imagemAtiva, setImagemAtiva] = useState(produto?.images?.[0])
 
