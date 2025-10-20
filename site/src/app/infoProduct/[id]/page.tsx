@@ -6,17 +6,19 @@ import { compressorData } from "@/data/products"
 import { useState } from 'react';
 import Link from 'next/link';
 
-type Params = {
+type PageProps = {
     params: {
         id: string
     }
 }
 
-export default function Page({ params }: Params) {
-    const produtoId = parseInt(params?.id || "0")
+export default function Page({ params }: PageProps) {
+    const produtoId = parseInt(params.id)
     const produto = compressorData.find((item) => item.id === produtoId)
     const [imagemAtiva, setImagemAtiva] = useState(produto?.images?.[0])
 
+    if (!produto) return <p>Produto não encontrado</p>
+    
     return (
         <>
             {/* <Header /> */}
