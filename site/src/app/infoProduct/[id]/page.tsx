@@ -2,7 +2,7 @@ import ClientPage from "./ClientPage"
 
 interface PageProps {
     params: {
-        id: string;
+        id: number;
     };
 }
 

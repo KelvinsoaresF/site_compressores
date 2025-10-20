@@ -4,10 +4,10 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { compressorData } from '@/data/products'
-type Props = { id: string }
+type Props = { id: number }
 
 export default function ClientPage({ id }: Props) {
-    const produtoId = parseInt(id)
+    const produtoId = (id)
     const produto = compressorData.find(p => p.id === produtoId)
     const [imagemAtiva, setImagemAtiva] = useState(produto?.images?.[0])
 
