@@ -1,10 +1,14 @@
 import ClientPage from "./ClientPage"
 
+type PageProps = {
+  params: Promise<{ id: string }>;
+};
+
 // Tipagem explícita de params, sem usar 'any'
-export default async function Page({
-  params,
-}: {
-  params: { id: string } // id sempre vem como string do App Router
-}) {
-  return <ClientPage id={params.id} />
+export default async function Page({ params }: PageProps) {
+  const id = (await params).id;
+  return <ClientPage id={id} />
 }
+
+
+
