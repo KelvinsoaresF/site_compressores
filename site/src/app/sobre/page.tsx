@@ -3,6 +3,7 @@
 import Image from "next/image"
 import { motion } from "framer-motion"
 import Rounded from "@/components/Rounded"
+import Slider from "@/components/Slider"
 
 export default function Sobre() {
     return (
@@ -15,6 +16,15 @@ export default function Sobre() {
                     "/img/img3.jpg",
                 ]}
             /> */}
+
+            <Slider
+                images={[
+
+
+                    "/banners/valdir2.png",
+
+                ]}
+            />
 
             {/* Imagens em círculos */}
             <motion.div

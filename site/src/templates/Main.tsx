@@ -13,13 +13,13 @@ import Link from "next/link"
 
 export default function Main() {
     return (
-        <main className="flex flex-col mt-2 items-center space-y-10 justify-center">
+        <main className="flex flex-col mt-2 p-2 items-center space-y-10 justify-center">
             <Slider
                 images={[
                     "/banners/banner1.png",
-                    "/banners/banner2.png",
+                    // "/banners/banner2.png",
                     "/banners/banner3.png",
-                    "/banners/banner4.png",
+                    "/banners/banner41.png",
                     "/banners/banner5.png",
                 ]}
             />
@@ -41,8 +41,8 @@ export default function Main() {
                 </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row text-2xl sm:text-4xl md:text-6xl font-bold justify-center items-center gap-4 sm:gap-6 p-4">
-                <h1 className="text-center">Produtos</h1>
+            <div className="flex flex-row sm:flex-row text-2xl sm:text-4xl md:text-6xl font-bold justify-center items-center gap-4 sm:gap-6 p-4">
+                <h1 className="text-center text-4xl">Produtos</h1>
 
                 <Image
                     src="/img/logo-chicago.png"
@@ -52,22 +52,19 @@ export default function Main() {
                     className="object-contain sm:w-[200px] md:w-[250px] lg:w-[300px] h-auto transition-opacity duration-700 ease-in-out"
                 />
             </div>
-            <div className="flex flex-wrap w-full items-start justify-center">
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-3 sm:gap-4 w-full max-w-7xl mx-auto px-2 py-2 sm:px-4">
                 {compressorData.map((compressor) => (
-                    <div
-                        key={compressor.id}
-                        className="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 p-2 mx-2"
-                    >
-                        <Link href={`/infoProduct/${compressor.id}`}>
-                            <Card
-                                image={compressor?.images?.[0]}
-                                title={compressor.name}
-                                hoverImage={compressor?.images?.[1]}
-                            />
-                        </Link>
-                    </div>
+                    <Link key={compressor.id} href={`/infoProduct/${compressor.id}`} className="block">
+                        <Card
+                            image={compressor?.images?.[0]}
+                            title={compressor.name}
+                            hoverImage={compressor?.images?.[1]}
+                        />
+                    </Link>
                 ))}
             </div>
+
 
         </main>
     )

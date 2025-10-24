@@ -94,7 +94,7 @@ export default function Header() {
                     </nav>
                 )}
                 <div className='text-sm py-2 flex justify-center bg-black'>
-                    Av. Geraldo Liessi, 611 2º Distrito Industrial - Birigui/SP
+                    Av. Geraldo Liessi, 611 2º Distrito Industrial - Birigui-SP
                 </div>
 
             </header>

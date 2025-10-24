@@ -1,6 +1,5 @@
 "use client"
 import Image from "next/image"
-
 import { useState } from "react"
 
 type CardProps = {
@@ -16,11 +15,16 @@ export default function Card({ image, hoverImage, title }: CardProps) {
         <div
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
-            className="group transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl flex flex-col items-center justify-between bg-white w-full p-4 sm:p-6 shadow-lg rounded-2xl mx-auto max-w-xs sm:max-w-sm border border-gray-200"
+            className="
+                group flex flex-col items-center justify-between 
+                bg-white border border-gray-200 rounded-xl shadow-md 
+                transition-all duration-300 hover:scale-[1.02] hover:shadow-xl 
+                w-[180px] h-[260px] sm:w-[220px] sm:h-[300px] 
+                p-3
+            "
         >
             {/* Imagem com efeito de overlay e troca */}
-            <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden">
-                {/* Imagem padrão */}
+            <div className="relative w-full h-[140px] sm:h-[160px] rounded-lg overflow-hidden">
                 {image && (
                     <Image
                         src={image}
@@ -30,7 +34,6 @@ export default function Card({ image, hoverImage, title }: CardProps) {
                     />
                 )}
 
-                {/* Imagem hover sobreposta */}
                 {hoverImage && (
                     <Image
                         src={hoverImage}
@@ -41,20 +44,27 @@ export default function Card({ image, hoverImage, title }: CardProps) {
                     />
                 )}
 
-                {/* Overlay escuro sutil (opcional) */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent transition-opacity duration-500 opacity-0 group-hover:opacity-100 z-10" />
+                {/* Overlay sutil */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent transition-opacity duration-500 opacity-0 group-hover:opacity-100 z-10" />
             </div>
 
             {/* Título */}
-            <div className="mt-6 mb-3 px-2 text-black text-center text-sm sm:text-base font-medium">
+            <div className="mt-3 mb-2 text-center text-xs sm:text-sm md:text-base text-black font-medium line-clamp-2">
                 {title}
             </div>
 
             {/* Botão */}
-                <button className="bg-blue-600 cursor-pointer rounded-2xl px-6 py-2 text-white font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:bg-blue-700 shadow-md hover:shadow-xl">
-                    VER MAIS
-                </button>
+            <button
+                className="
+                    bg-blue-600 text-white font-semibold 
+                    text-xs sm:text-sm 
+                    rounded-xl px-4 py-1.5 
+                    shadow-md hover:shadow-lg 
+                    transition-all duration-300 hover:scale-105 hover:bg-blue-700
+                "
+            >
+                VER MAIS
+            </button>
         </div>
     )
 }
-
